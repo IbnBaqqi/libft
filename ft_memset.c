@@ -1,9 +1,9 @@
 #include "libft.h"
 
-void *ft_memset(void *str, int c, size_t len)
+void	*ft_memset(void *str, int c, size_t len)
 {
-	unsigned char a;
-	unsigned char *ptr;
+	unsigned char	a;
+	unsigned char	*ptr;
 
 	ptr = (unsigned char *)str;
 	a = (unsigned char)c;
@@ -11,5 +11,5 @@ void *ft_memset(void *str, int c, size_t len)
 	{
 		*ptr++ = a;
 	}
-	return str;
+	return (str);
 }
