@@ -1,5 +1,19 @@
 #include "libft.h"
 
+/*
+STRRCHR(3) (simplified)
+
+NAME
+    strrchr -- locate character in string
+SYNOPSIS
+    char *strrchr(const char *s, int c);
+DESCRIPTION
+    The strrchr() function is identical to strchr(), except it locates the last occurence of c.
+RETURN VALUES
+    The function strrchr() returns a pointer to the located character,
+	or NULL if the character does not appear in the string.
+*/
+
 char *ft_strrchr(const char *s, int c)
 {
     char a;
