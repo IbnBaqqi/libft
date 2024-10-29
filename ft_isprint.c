@@ -1,6 +1,6 @@
 #include "libft.h"
 
-int ft_print(int c)
+int ft_isprint(int c)
 {
     if (c >= 32 && c <= 126)
     {

@@ -69,7 +69,7 @@ void test_strlcpy() {
     //char s4[] = "Helsinki";
 
     printf("Dst: Hello World.\nSrc: Helsinki.\nc = 'n'.\nExpected: W / World\n\n");
-    ft_strlcpy(s1, s2, 8 * sizeof(char));
+    ft_strlcpy(s1, s2, sizeof(s1));
    // strlcpy(s3, s4, 8 * sizeof(char));
     printf("ft_strlcpy: %s", s1);
     printf("\n");
