@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 #include "../libft.h"
 
 void test_memset(void)
@@ -52,12 +53,27 @@ void test_memccpy()
     char s2[] = "Helsinki";
     char s3[] = "Hello World";
     char s4[] = "Helsinki";
+    
     printf("Dst: Hello World.\nSrc: Helsinki.\nc = 'n'.\nExpected: W / World\n\n");
     char *ans = ft_memccpy(s1, s2, 'n', 8 * sizeof(char));
     char *ans1 = memccpy(s3, s4, 'n', 8 * sizeof(char));
     printf("ft_memccpy: %s", ans);
     printf("\n");
     printf("memcpy    : %s", ans1);
+}
+void test_strlcpy() {
+    printf("\n\n*****TESTING STRLCPY*****\n\n");
+    char s1[] = "Hello World";
+    char s2[] = "Helsinki";
+   // char s3[] = "Hello World";
+    //char s4[] = "Helsinki";
+
+    printf("Dst: Hello World.\nSrc: Helsinki.\nc = 'n'.\nExpected: W / World\n\n");
+    ft_strlcpy(s1, s2, 8 * sizeof(char));
+   // strlcpy(s3, s4, 8 * sizeof(char));
+    printf("ft_strlcpy: %s", s1);
+    printf("\n");
+   // printf("strlcpy    : %s", s3);
 }
 
 int main(void)
@@ -66,6 +82,6 @@ int main(void)
     test_bzero();
     test_memcpy();
     test_memccpy();
-
+    test_strlcpy();
     return 0;
 }
