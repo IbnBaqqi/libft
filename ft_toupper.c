@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sabdulba <sabdulba@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: sabdulba <sabdulba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 10:20:17 by sabdulba          #+#    #+#             */
-/*   Updated: 2024/10/30 10:20:19 by sabdulba         ###   ########.fr       */
+/*   Updated: 2024/10/30 16:59:53 by sabdulba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,5 +18,5 @@ int ft_toupper(int c)
     {
         return (c -= 32);
     }
-    return (0);
+    return (c);
 }

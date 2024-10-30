@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sabdulba <sabdulba@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: sabdulba <sabdulba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 10:20:04 by sabdulba          #+#    #+#             */
-/*   Updated: 2024/10/30 10:20:06 by sabdulba         ###   ########.fr       */
+/*   Updated: 2024/10/30 17:00:00 by sabdulba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,5 +18,5 @@ int ft_tolower (int c)
     {
         return (c += 32);
     }
-    return (0);
+    return (c);
 }
