@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sabdulba <sabdulba@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: sabdulba <sabdulba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 10:18:28 by sabdulba          #+#    #+#             */
-/*   Updated: 2024/10/30 10:18:32 by sabdulba         ###   ########.fr       */
+/*   Updated: 2024/10/30 13:39:30 by sabdulba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,12 +47,17 @@ size_t ft_strlcat(char *dst, const char *src, size_t dstsize)
 
 	if (dstsize == 0)
     	return srclen;
-	if(dstlen == dstsize)
+	
+	if (dstlen >= dstsize)
+		dstlen = dstsize;
+	
+	if (dstlen == dstsize)
 		return (dstlen + srclen);
 
 	if (dstsize > srclen + dstlen)
 		ft_memcpy(dst + dstlen, src, srclen + 1);
-	else {
+	else
+	{
 		ft_memcpy(dst + dstlen, src, dstsize - dstlen - 1);
 		dst[dstsize - 1] = 0;
 	}

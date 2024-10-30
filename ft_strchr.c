@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sabdulba <sabdulba@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: sabdulba <sabdulba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 10:18:06 by sabdulba          #+#    #+#             */
-/*   Updated: 2024/10/30 10:18:08 by sabdulba         ###   ########.fr       */
+/*   Updated: 2024/10/30 12:59:30 by sabdulba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,16 +30,18 @@ RETURN VALUES
 char *ft_strchr(const char *s, int c)
 {
     char a;
-    const char *x;
+    //const char *x;
 
     a = (char )c;
-    x = s;
+    //x = s;
 
-    while(x) 
+    while(*s != '\0') 
     {
-        if (*x == a)
-            return ((char *)x);
-        x++;
+        if (*s == a)
+            return ((char *)s);
+        s++;
     }
+	if (a == '\0')
+        return (char *)s;
     return (NULL);
 }
