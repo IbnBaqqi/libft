@@ -6,42 +6,38 @@
 /*   By: sabdulba <sabdulba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 16:43:01 by sabdulba          #+#    #+#             */
-/*   Updated: 2024/10/30 17:51:32 by sabdulba         ###   ########.fr       */
+/*   Updated: 2024/10/31 16:46:23 by sabdulba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	countChar(char const *str, char c);
-static char	*fillMemTrim(char const *s1, char *trimMem, char const *setToTrim);
+static int	count_char(char const *str, char c);
+static char	*fill_mem_trim(char const *s, char *trim_mem, char const *set_trim);
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	char *str_mem;
-	char *getTrimMem;
-	int i;
-	int setIns1;
-	size_t s_len;
-	size_t trimLen;
-	
+	char	*str_mem;
+	char	*get_trim_mem;
+	int		i;
+	int		set_in_s;
+	size_t	trim_len;
+
 	i = 0;
-	setIns1 = 0;
+	set_in_s = 0;
 	while (s1[i] != 0)
-		setIns1 += countChar(set, s1[i++]); //count of total set element to figure out len to allocate
-	s_len = ft_strlen(s1);
-	trimLen = s_len - setIns1;
-	
-	str_mem = (char *)malloc(trimLen + 1);
+		set_in_s += count_char(set, s1[i++]);
+	trim_len = ft_strlen(s1) - set_in_s;
+	str_mem = (char *)malloc(trim_len + 1);
 	if (!str_mem)
 		return (NULL);
-	getTrimMem = fillMemTrim(s1, str_mem, set);
-	return (getTrimMem);
-	
+	get_trim_mem = fill_mem_trim(s1, str_mem, set);
+	return (get_trim_mem);
 }
-//Helper to count the numbers of set in s1 we need to trim and also if char of s1 is part of set
-static int countChar(char const *str, char c)
+
+static int	count_char(char const *str, char c)
 {
-	int found;
+	int	found;
 
 	found = 0;
 	while (*str != '\0')
@@ -49,29 +45,29 @@ static int countChar(char const *str, char c)
 		if (c == *str)
 		{
 			found++;
-			return (found); // i.e 1
+			return (found);
 		}
-		str++;	
+		str++;
 	}
 	return (0);
 }
-//Function to fill the allocated memory with trimed string
-static char *fillMemTrim(char const *s1, char *trimMem, char const *setToTrim)
+
+static char	*fill_mem_trim(char const *s, char *trim_mem, char const *set_trim)
 {
-	int i;
-	int j;
-	
+	int	i;
+	int	j;
+
 	i = 0;
 	j = 0;
-	while (s1[i] != '\0')
+	while (s[i] != '\0')
 	{
-		if(countChar(setToTrim, s1[i]))
+		if (count_char(set_trim, s[i]))
 		{
 			i++;
-			continue;
+			continue ;
 		}
-		trimMem[j++] = s1[i++];
+		trim_mem[j++] = s[i++];
 	}
-	trimMem[j] = '\0';
-	return (trimMem);
+	trim_mem[j] = '\0';
+	return (trim_mem);
 }

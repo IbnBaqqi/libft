@@ -3,24 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sabdulba <sabdulba@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: sabdulba <sabdulba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 10:16:46 by sabdulba          #+#    #+#             */
-/*   Updated: 2024/10/30 10:16:48 by sabdulba         ###   ########.fr       */
+/*   Updated: 2024/10/31 16:01:28 by sabdulba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    *ft_memcpy(void *dest, const void *src, size_t n)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-    unsigned char   *dst = (unsigned char *)dest;
-    unsigned char   *nsrc = (unsigned char *)src;
+	unsigned char	*dst;
+	unsigned char	*nsrc;
 
-    while(n > 0)
-    {
-        *dst++ = *nsrc++;
-        n--;
-    }
-    return (dest);
+	dst = (unsigned char *)dest;
+	nsrc = (unsigned char *)src;
+	while (n > 0)
+	{
+		*dst++ = *nsrc++;
+		n--;
+	}
+	return (dest);
 }
