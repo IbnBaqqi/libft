@@ -6,7 +6,7 @@
 /*   By: sabdulba <sabdulba@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 17:52:27 by sabdulba          #+#    #+#             */
-/*   Updated: 2024/11/01 13:42:43 by sabdulba         ###   ########.fr       */
+/*   Updated: 2024/11/01 16:00:51 by sabdulba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,4 +84,8 @@ static int	count_word(char const *s, char c)
 		i++;
 	}
 	return (count);
+}
+static char freeup()
+{
+	
 }

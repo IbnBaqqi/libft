@@ -6,7 +6,7 @@
 /*   By: sabdulba <sabdulba@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 14:35:42 by sabdulba          #+#    #+#             */
-/*   Updated: 2024/11/01 13:43:05 by sabdulba         ###   ########.fr       */
+/*   Updated: 2024/11/01 15:36:35 by sabdulba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		str_mem[i] = s1[i];
 		i++;
 	}
-	while (s2[i + j] != 0)
+	while (s2[j] != 0)
 	{
 		str_mem[i + j] = s2[j];
 		j++;
