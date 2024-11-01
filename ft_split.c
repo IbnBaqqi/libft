@@ -6,14 +6,19 @@
 /*   By: sabdulba <sabdulba@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 17:52:27 by sabdulba          #+#    #+#             */
-/*   Updated: 2024/11/01 16:00:51 by sabdulba         ###   ########.fr       */
+/*   Updated: 2024/11/01 20:01:28 by sabdulba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+// !!!!!!!!!!!!!!!/!
+// !!!!!!!!!!!!!!!!!!!!!
+#include <stdio.h>
+// !!!!!!!!!!!!!!!!!!!?
 
 static char	*copy_words(char const *start, char const *end);
 static int	count_word(char const *s, char c);
+static void freeup(char **word, int len);
 
 char	**ft_split(char const *s, char c)
 {
@@ -29,14 +34,19 @@ char	**ft_split(char const *s, char c)
 	if (!splitted)
 		return (NULL);
 	i = 0;
-	while (*s != '\0')
+	while (*s - 1 != '\0')
 	{
 		if (*s != c)
 		{
 			start = s;
-			while (*s && *s != c)
+			while (*s != '\0' && *s != c)
 				s++;
-			splitted[i++] = copy_words(start, s);
+			splitted[i] = copy_words(start, s);
+			if(!splitted[i]) {
+				freeup(splitted, i);
+				return (NULL);
+			}
+			i++;
 		}
 		s++;
 	}
@@ -57,9 +67,12 @@ static char	*copy_words(char const *start, char const *end)
 	dest = string;
 	while (start < end)
 	{
+		
 		*dest++ = *start++;
 	}
 	*dest = '\0';
+	//ehgfrfgrhfgrh
+	// printf("%s\n", string);
 	return (string);
 }
 
@@ -85,7 +98,33 @@ static int	count_word(char const *s, char c)
 	}
 	return (count);
 }
-static char freeup()
+static void freeup(char **word, int len)
 {
+	int i;
+
+	i = 0;
+	while(i < len)
+		free(word[i++]);
+	free(word);
+}
+#include <stdio.h>
+int main(void)
+{
+	int i = 0;
 	
+	char **split = ft_split("lorem*ipsum*dolor h*H", '*');
+	while (split[i])
+	{
+		int j = 0;
+		while(split[i][j])
+		{
+			printf("%c", split[i][j]);
+			j++;
+		}
+		printf("\n");
+		i++;
+	}
+	printf(">>>\n");
+	free(split);
+	return 0;
 }
