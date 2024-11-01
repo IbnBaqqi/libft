@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sabdulba <sabdulba@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sabdulba <sabdulba@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 16:34:37 by sabdulba          #+#    #+#             */
-/*   Updated: 2024/10/31 17:47:19 by sabdulba         ###   ########.fr       */
+/*   Updated: 2024/11/01 10:58:10 by sabdulba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,7 @@
 # include <string.h>
 # include <stdlib.h>
 # include <unistd.h>
-
-# define SIZE_MAX 18446744073709551615ULL  // 2^64 - 1
+# include <limits.h>
 
 /*Memory*/
 void	*ft_memset(void *str, int c, size_t len);

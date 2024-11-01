@@ -1,4 +1,4 @@
-SRC = $(wildcard *.c) #ft_memset.c ft_bzero.c ft_memcpy.c #ft_memccpy.c
+SRC = $(wildcard *.c) #ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c 
 OBJ := $(SRC:%.c=%.o)
 NAME = libft.a
 LIBC = ar rc $(NAME)
