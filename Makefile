@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: sabdulba <sabdulba@student.hive.fi>        +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2024/11/22 14:49:27 by sabdulba          #+#    #+#              #
+#    Updated: 2024/11/22 14:49:28 by sabdulba         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 ##SRC = $(wildcard *.c) #ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c 
 SRC = $(shell ls src/*.c)
 OBJ := $(SRC:src%.c=obj%.o)
