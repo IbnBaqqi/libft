@@ -9,34 +9,32 @@ CC = cc
 FLAG = -Wall -Wextra -Werror
 INCLUDE := -I./inc
 
-RM = rm -f
+RM = rm -rf
 EXEC = libft
 
 all : $(NAME)
 
-obj:
-    mkdir -p obj
+obj :
+	mkdir -p obj
 
 obj/%.o : src/%.c | obj
-    $(CC) $(FLAG) $(INCLUDE) -c $< -o $@
+	$(CC) $(FLAG) $(INCLUDE) -c $< -o $@
 
 $(NAME) : $(OBJ)
-    $(LIBC) $(OBJ)
-    $(LIBR)
+	$(LIBC) $(OBJ)
+	$(LIBR)
 
 $(MAIN_OBJ): $(MAIN)
-    $(CC) $(FLAG) -c $(MAIN) -o $(MAIN_OBJ)
+	$(CC) $(FLAG) -c $(MAIN) -o $(MAIN_OBJ)
 
 clean :
-    $(RM) $(MAIN_OBJ) $(EXEC) -rf obj
+	$(RM) $(MAIN_OBJ) $(EXEC) obj
 
 fclean : clean
-    $(RM) $(NAME)
+	$(RM) $(NAME)
 
 re : fclean all
 
 run : $(NAME) $(MAIN_OBJ)
-    $(CC) $(FLAG) $(MAIN_OBJ) -L. -lft -o $(EXEC)
-    ./$(EXEC)
-
-why is the .a file not getting created when i run make but works when i run make all
+	$(CC) $(FLAG) $(MAIN_OBJ) -L. -lft -o $(EXEC)
+	./$(EXEC)
