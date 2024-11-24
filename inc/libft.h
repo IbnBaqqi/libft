@@ -6,7 +6,7 @@
 /*   By: sabdulba <sabdulba@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 16:34:37 by sabdulba          #+#    #+#             */
-/*   Updated: 2024/11/01 10:58:10 by sabdulba         ###   ########.fr       */
+/*   Updated: 2024/11/24 19:51:59 by sabdulba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <limits.h>
+# include "ft_printf.h"
 
 /*Memory*/
 void	*ft_memset(void *str, int c, size_t len);
