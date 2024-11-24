@@ -6,47 +6,50 @@
 #    By: sabdulba <sabdulba@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/22 09:08:39 by sabdulba          #+#    #+#              #
-#    Updated: 2024/11/22 15:00:38 by sabdulba         ###   ########.fr        #
+#    Updated: 2024/11/24 14:57:59 by sabdulba         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-##SRC = $(wildcard *.c) #ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c 
-SRC = $(shell ls src/*.c)
-OBJ := $(SRC:src%.c=obj%.o)
+##SRC = $(wildcard *.c) #ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c
 NAME = libft.a
+FLAG = -Wall -Wextra -Werror
+CORE = $(shell ls src/*.c)
+PRINTF = $(shell ls ftprintf/*.c)
+SRC = $(CORE) $(PRINTF)
+OBJ := $(SRC:%.c=obj/%.o)
+
 LIBC = ar rc $(NAME)
 LIBR = ranlib $(NAME)
 
 CC = cc
-FLAG = -Wall -Wextra -Werror
-INCLUDE := -I./inc
+INCLUDE := -I./inc -I./ftprintf
 
 RM = rm -rf
 EXEC = libft
 
 all : $(NAME)
 
-obj :
-	mkdir -p obj
+#obj :
+#	mkdir -p obj
 
-obj/%.o : src/%.c | obj
+obj/%.o : %.c 
+	mkdir -p $(@D)
 	$(CC) $(FLAG) $(INCLUDE) -c $< -o $@
 
 $(NAME) : $(OBJ)
 	$(LIBC) $(OBJ)
 	$(LIBR)
 
-$(MAIN_OBJ): $(MAIN)
-	$(CC) $(FLAG) -c $(MAIN) -o $(MAIN_OBJ)
-
 clean :
-	$(RM) $(MAIN_OBJ) $(EXEC) obj
+	$(RM) obj
 
 fclean : clean
 	$(RM) $(NAME)
 
 re : fclean all
 
-run : $(NAME) $(MAIN_OBJ)
-	$(CC) $(FLAG) $(MAIN_OBJ) -L. -lft -o $(EXEC)
-	./$(EXEC)
+#$(MAIN_OBJ): $(MAIN)
+#	$(CC) $(FLAG) -c $(MAIN) -o $(MAIN_OBJ)
+#run : $(NAME) $(MAIN_OBJ)
+#	$(CC) $(FLAG) $(MAIN_OBJ) -L. -lft -o $(EXEC)
+#	./$(EXEC)
